@@ -1,0 +1,14 @@
+<div class="join-container">
+    <div class="icon-container">
+        <div class="icon-bg">
+            <span class="material-symbols-rounded icon">
+                person
+                </span>
+        </div>
+    </div>
+    <p>Join the fun!</p>
+    <input type="text" placeholder="Username" [(ngModel)]="configService.username">
+    <input type="text" placeholder="Group ID" [(ngModel)]="configService.chatroom">
+    
+    <button (click)="configService.join()">Join</button>
+</div>

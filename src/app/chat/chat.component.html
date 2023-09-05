@@ -1,0 +1,37 @@
+<!-- <p>chat works!</p>
+<p>Participants: {{ socketService.participants.length - 1 }}</p>
+<button (click)="leaveChatroom()"></button>
+<p *ngFor="let message of socketService.messages">{{ message.message }}</p>
+<input type="text" [(ngModel)]="newMessage">
+<button (click)="sendMessage()">Send</button> -->
+
+<nav>
+
+    <span class="material-symbols-rounded exit" (click)="leaveChatroom()">close</span>
+
+    <div class="info">
+        <p class="chatroom">#{{ socketService.chatroom.toUpperCase() }}</p>
+        <p class="participants">{{ socketService.participants.length }} active</p>
+    </div>
+    
+    <span class="material-symbols-rounded more">more_vert</span>
+
+</nav>
+<div class="disappear"></div>
+<main id="main">
+    <div 
+        *ngFor="let message of socketService.messages"
+        class="msg"
+        [class.msg-foreign]="message.username != socketService.self"
+        [class.msg-self]="message.username == socketService.self"
+    >
+        <p class="username" [class.invisible]="message.username == socketService.self">{{ message.username }}</p>
+        <p class="text">{{ message.message }}</p>
+    </div>
+</main>
+<div class="type">
+    <input type="text" placeholder="Type message..." [(ngModel)]="newMessage" (keydown.enter)="sendMessage()">
+    <div class="send-container">
+        <span class="material-symbols-rounded send" (click)="sendMessage()">send</span>
+    </div>
+</div>

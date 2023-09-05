@@ -1,0 +1,86 @@
+.join-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    border: 1px solid #0002;
+    /* box-shadow: 0px 0px 15px 1px #a445ed34; */
+    border-radius: 1rem;
+
+    max-width: 65vw;
+
+    padding: 1rem;
+    padding-top: 3.4rem;
+}
+
+.icon-container {
+    display: inline;
+    position: absolute;
+    top: -2rem;
+    min-width: 100%;
+    min-height: 4rem;
+    max-height: 4rem;
+
+    margin: 0 auto 0 -1rem;
+}
+
+.icon-bg {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: var(--main);
+    border-radius: 100%;
+    border: 2px solid #bbb;
+
+    max-height: 4rem;
+    min-height: 4rem;
+    max-width: 4rem;
+    min-width: 4rem;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon {
+    transform: scale(1.6);
+    margin-bottom: 4px;
+}
+
+p {
+    display: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: sans;
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+
+input {
+    /* border-radius: 0.8rem; */
+    border: 0px solid #0002;
+    border-bottom: 1px solid #0002;
+    font-size: 1.3rem;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--main);
+}
+
+button {
+    color: white;
+    background-color: var(--main);
+    font-size: 1.25rem;
+    font-family: sans-serif;
+    font-weight: bold;
+
+    outline: none;
+    border: none;
+    border-radius: 1.8rem;
+
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+}
