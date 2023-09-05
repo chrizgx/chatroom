@@ -40,9 +40,9 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/chat/dist/chat/index.html');
+    res.sendFile(__dirname + '/dist/chat/index.html');
 })
-app.use('/public', express.static(__dirname + '/chat/dist/chat/'));
+app.use('/public', express.static(__dirname + '/dist/chat/'));
 
 io.on('connection', (socket) => {
 
