@@ -17,7 +17,7 @@ export class SocketService {
   participants: any = [];
 
   constructor() {
-    this.socket = io('http://192.168.2.15:3001');
+    this.socket = io('/');
   }
 
   connect(username: string, chatroom: string) {
