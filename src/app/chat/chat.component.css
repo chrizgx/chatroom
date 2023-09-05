@@ -60,11 +60,17 @@ main {
 }
 
 .username {
-    font-size: 0.8rem;
-    color: #777;
+    font-size: 1rem;
+    color: var(--main);
+}
+
+.signature {
+    font-size: 0.65rem;
+    color: #777
 }
 
 .text {
+    display: inline-block;
     border-radius: 0.1rem;
     font-size: 1.3rem;
     padding: 0.8rem;

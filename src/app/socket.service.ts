@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, isDevMode } from '@angular/core';
 import { io } from 'socket.io-client';
 import { Observable } from 'rxjs';
 import { RouterModule, Router } from '@angular/router';
@@ -12,12 +12,17 @@ export class SocketService {
   connected: boolean = false;
 
   self: any = '';
+  signature: string = '';
   chatroom: string = '';
   messages: any = [];
   participants: any = [];
 
   constructor() {
-    this.socket = io('/');
+    if (isDevMode()) {
+      this.socket = io('192.168.2.15:3001/');
+    } else {
+      this.socket = io('/');
+    }
   }
 
   connect(username: string, chatroom: string) {
@@ -44,6 +49,7 @@ export class SocketService {
     this.connected = false;
     this.messages = [];
     this.self = '';
+    this.signature = '';
     this.chatroom = '';
     setTimeout(() => {
       this.router.navigate(['/menu']);
@@ -58,6 +64,9 @@ export class SocketService {
     });
     this.socket.on('participants', (message: any) => {
       this.participants = message;
+    });
+    this.socket.on('signature', (message: string) => {
+      this.signature = message;
     })
     this.socket.on('leave', () => {
       this.leaveChatroom();

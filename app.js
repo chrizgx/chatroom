@@ -30,6 +30,16 @@ let message = {
     message: ''
 }
 
+const generateSignature = (len) => {
+    let signature = '';
+    let chars = 'QWERTYUIOPASDFGHJKLZXCVBNM1234567890';
+    for (let i = 0; i < len; i++) {
+        signature += chars[Math.round(Math.random() * (chars.length-1))];
+    }
+
+    return signature
+}
+
 app.use(cors({
     origin: '*'
 }));
@@ -58,6 +68,7 @@ io.on('connection', (socket) => {
         console.log(username, chatroom + ' JOINED');
         socket.username = username;
         socket.CHATROOM = chatroom;
+        socket.signature = generateSignature(8);
 
         if (chatrooms[chatroom] == null) {
             chatrooms[chatroom] = {
@@ -75,12 +86,14 @@ io.on('connection', (socket) => {
         socket.chatroom.sockets.forEach(element => {
             element.emit('participants', socket.chatroom.active);
         })
+
+        socket.emit('signature', socket.signature);
     });
 
     socket.on('message', (message) => {
         finalMessage = {
             username: socket.username,
-            connectionSignature: null,
+            connectionSignature: socket.signature,
             message: message
         }
         
