@@ -2,6 +2,14 @@
 
 Welcome to this exciting project, a real-time chatroom application built with Angular, Express.js and Socket.IO. This project showcases my ability to create interactive, real-time applications.
 
+| Join | Chris' Screen | George's Screen |
+|---------|---------|---------|
+| <img src="https://github.com/chrizgx/chatroom/assets/102369753/14a01408-4770-46da-a707-a0d94241f3db" > | <img src="https://github.com/chrizgx/chatroom/assets/102369753/0b22c7ad-741a-4f51-a806-a17d3397325c" > | <img src="https://github.com/chrizgx/chatroom/assets/102369753/101c0c62-fbce-423d-a40f-94db91ee4eb7" > |
+
+<!-- ![Screen Shot 2023-12-08 at 17 47 17](https://github.com/chrizgx/chatroom/assets/102369753/101c0c62-fbce-423d-a40f-94db91ee4eb7)
+![Screen Shot 2023-12-08 at 17 46 57](https://github.com/chrizgx/chatroom/assets/102369753/0b22c7ad-741a-4f51-a806-a17d3397325c)
+![Screen Shot 2023-12-08 at 17 41 50](https://github.com/chrizgx/chatroom/assets/102369753/14a01408-4770-46da-a707-a0d94241f3db) -->
+
 ### Key Features
 
 1. Real-Time Interaction: Leveraging the power of Socket.IO, this application provides real-time, bidirectional communication between users.
