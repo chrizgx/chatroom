@@ -10,7 +10,7 @@
     <span class="material-symbols-rounded exit" (click)="leaveChatroom()">close</span>
 
     <div class="info">
-        <p class="chatroom">#{{ socketService.chatroom.toUpperCase() }}</p>
+        <p class="chatroom">#{{ socketService.chatroom }}</p>
         <p class="participants">{{ socketService.participants.length }} active</p>
     </div>
     
